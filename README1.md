@@ -23,3 +23,38 @@ Example:
   "email": "john.doe@example.com",
   "password": "password123"
 }
+```
+
+## Response Body
+The response body will be a JSON object with the following fields:
+- `token` (string): The JWT token for the authenticated user.
+- `captain` (object): The captain object containing the following fields:
+  - `_id` (string): The ID of the captain.
+  - `fullname.firstname` (string): The first name of the captain.
+  - `fullname.lastname` (string): The last name of the captain.
+  - `email` (string): The email address of the captain.
+  - `vehicle` (object): The vehicle object containing the following fields:
+    - `color` (string): The color of the vehicle.
+    - `plate` (string): The license plate of the vehicle.
+    - `capacity` (number): The capacity of the vehicle.
+    - `vehicleType` (string): The type of the vehicle.
+
+Example:
+```json
+{
+  "token": "jwt_token_here",
+  "captain": {
+    "_id": "captain_id_here",
+    "fullname": {
+      "firstname": "John",
+      "lastname": "Doe"
+    },
+    "email": "john.doe@example.com",
+    "vehicle": {
+      "color": "Red",
+      "plate": "XYZ123",
+      "capacity": 4,
+      "vehicleType": "car"
+    }
+  }
+}
